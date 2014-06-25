@@ -6,6 +6,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.ttang.MyClass;
+
 import com.sun.jersey.spi.resource.Singleton;
 
 @Singleton
@@ -13,8 +15,8 @@ import com.sun.jersey.spi.resource.Singleton;
 public class JerseyModule {
 
 	@GET
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response hello() {
-		return Response.ok("world").build();
+		return Response.ok(new MyClass()).build();
 	}
 }
